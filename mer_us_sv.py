@@ -6,7 +6,7 @@
 import RPi.GPIO as GPIO; import time; GPIO.setwarnings(False)
 time.sleep(7) # time to put the MER on the ground
 # constants used for driving logic
-line_of_sight = 40; turn_delay = 1
+line_of_sight = 45; turn_delay = 1
 
 # duty cycle values for the pulse width modulation of the servo. Default min.2 max.12 
 # check these values to make sure the servo properly rotates 40 degrees each side
@@ -91,9 +91,9 @@ my_robot.motor_speed(70,70)
 # the main loop
 while True:
     # look in each direction and check the distance to the nearest object
-    my_robot.turn_servo(40); distance_left = my_robot.look()
+    my_robot.turn_servo(45); distance_left = my_robot.look()
     my_robot.turn_servo(0); distance_straight = my_robot.look()
-    my_robot.turn_servo(-40); distance_right = my_robot.look()
+    my_robot.turn_servo(-45); distance_right = my_robot.look()
     
     # show the three distances and a blank line
     print("Distance left     %4.1f cm" % distance_left)
