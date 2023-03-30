@@ -1,0 +1,25 @@
+Open the menu (bottom/top left).
+Go to preferences and open Raspberry Pi Configuration.
+Go to Interfaces.
+Activate VNC.
+Once the Pi has booted up, click on the VNC logo in the bottom/top right of your screen.
+On the left, you will see the Pi's IP address (which starts with 192. and varies on each Wi-Fi network). Note this down.
+Open the terminal and type: git clone https://github.com/NathanSchalkwijk/robotica.wf.git [enter]
+If you want to help test new versions, use:
+Git clone https://github.com/NathanSchalkwijk/robotica-beta.git [enter]
+When you have cloned the files from robotica.wf, we will start with the camera app.
+Still in the terminal, type: cd robotica.wf [enter]
+Then, type: sudo apt install cmake libjpeg9-dev [enter]
+If the Pi asks for Y/N, type Y [enter]
+Now, type: sudo apt install gcc g++ [enter]
+Next, use: cd mjpg-streamer-experimental [enter]
+Then, type: make [enter]
+After that, type: sudo make install [enter]
+Now, type: sudo /etc/rc.local [enter]
+At the bottom of the file, before "exit 0", leave a line and type:
+export LD_LIBRARY_PATH=/home/pi/robotica.wf/mjpg-streamer-experimental [enter]
+Below that, type:
+/home/pi/robotica.wf/mjpg-streamer-experimental/mjpg_streamer -i '/home/pi/robotica.wf/mjpg-streamer-experimental/input_uvc.so -d /dev/video0 -r 1280x720 -f 15 -n -rot 90' -o '/home/pi/robotica.wf/mjpg-streamer-experimental/output_http.so -w www -p 8080' [no enter]
+If this is a bit too difficult for you, you can ask someone, such as Nathan Schalkwijk/Ton Schuckman, for help.
+Press [control x], then y and enter.
+Now, type: sudo reboot [enter].
