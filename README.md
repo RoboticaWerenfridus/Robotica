@@ -1,4 +1,4 @@
 # Robotica
 Alle benodigde bestanden voor je robotica robot
 
-Voor instructies kijk je in het Robotica instructies.pdf
+Voor instructies open je instructies.pdf
