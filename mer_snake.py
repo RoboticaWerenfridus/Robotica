@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO; import time
 GPIO.setmode(GPIO.BCM)
 time.sleep(5) # to put the MER on the ground
-motor_left = 4; motor_right = 5; run_time = 0
+motor_left = 6; motor_right = 12; run_time = 0
 
 GPIO.setup(motor_left, GPIO.OUT); GPIO.setup(motor_right, GPIO.OUT)
 
