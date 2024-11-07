@@ -5,13 +5,13 @@ import pygame
 
 # Setup GPIO mode and pin configuration
 gpio.setmode(gpio.BCM)
-gpio.setup(4, gpio.OUT)   # Motor 1 (left) forward pin
-gpio.setup(5, gpio.OUT)   # Motor 2 (right) forward pin
+gpio.setup(6, gpio.OUT)   # Motor 1 (left) forward pin
+gpio.setup(12, gpio.OUT)   # Motor 2 (right) forward pin
 gpio.setwarnings(False)
 
 # Setup PWM for the motors
-motor1_forward_pwm = gpio.PWM(4, 100)  # Motor 1 (left) forward
-motor2_forward_pwm = gpio.PWM(5, 100)  # Motor 2 (right) forward
+motor1_forward_pwm = gpio.PWM(6, 100)  # Motor 1 (left) forward
+motor2_forward_pwm = gpio.PWM(12, 100)  # Motor 2 (right) forward
 
 motor1_forward_pwm.start(0)
 motor2_forward_pwm.start(0)
