@@ -14,7 +14,7 @@ min_duty = 2; max_duty = 11
 
 class Robot:
     # define all pins as used on the raspberry pi board
-    servo_pin = 22; motor_left = 4; motor_right = 5; echo_pin = 27; trig_pin = 17
+    servo_pin = 21; motor_left = 6; motor_right = 12; echo_pin = 19; trig_pin = 16
 
     # initial setup of the robot
     def __init__(self):
