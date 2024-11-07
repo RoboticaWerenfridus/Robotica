@@ -28,30 +28,30 @@ bd = BlueDot()
  
 def init():
     gpio.setmode(gpio.BCM)
-    gpio.setup(4, gpio.OUT)
-    gpio.setup(5, gpio.OUT)
+    gpio.setup(6, gpio.OUT)
+    gpio.setup(12, gpio.OUT)
     gpio.setwarnings(False)
 
 init()
 
 def forward(tf):
-    gpio.output(4, True)
-    gpio.output(5, True)
+    gpio.output(6, True)
+    gpio.output(12, True)
     time.sleep(tf)
     
 def left(tf):
-    gpio.output(4, False)
-    gpio.output(5, True)
+    gpio.output(6, False)
+    gpio.output(12, True)
     time.sleep(tf)
      
 def right(tf):
-    gpio.output(4, True)
-    gpio.output(5, False)
+    gpio.output(6, True)
+    gpio.output(12, False)
     time.sleep(tf)
     
 def stop(tf):
-    gpio.output(4, False)
-    gpio.output(5, False)
+    gpio.output(6, False)
+    gpio.output(12, False)
     sys.exit()
     time.sleep(tf)
     
@@ -70,16 +70,16 @@ def move(pos):
 
 def init():
     gpio.setmode(gpio.BCM)
-    gpio.setup(4, gpio.OUT)
-    gpio.setup(5, gpio.OUT)
+    gpio.setup(6, gpio.OUT)
+    gpio.setup(12, gpio.OUT)
     gpio.setwarnings(False)
     
 def stop1():
     init()
-    gpio.output(4, False)
-    gpio.output(5, False)
+    gpio.output(6, False)
+    gpio.output(12, False)
 
-gpio.output(4, False); gpio.output(5, False)
+gpio.output(6, False); gpio.output(12, False)
 bd.when_pressed = move
 bd.when_moved = move
 bd.when_released = stop1
